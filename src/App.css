@@ -1,27 +1,35 @@
 .App {
   text-align: center;
-  display: flex;  
+  display: flex;
   font-weight: bold;
   flex-direction: column;
   flex: 1;
 
 }
 .body {
-  display: flex;  
+  display: flex;
   flex-direction: row;
-  flex: 1;
+  height: 400px;
+  flex: 2;
   justify-content: space-between;
 }
 .App-logo {
   animation: App-logo-spin infinite 20s linear;
-  height: 80px;
+  height: 30px;
+}
+.footer {
+
+  height: auto;
+  background-color:#ccc7b8;
+  justify-content: space-between;
 }
 
 .App-header {
   background-color: #222;
-  height: 150px;
+  height: 60px;
   padding: 20px;
   color: white;
+  flex: 1;
 }
 
 .App-title {
@@ -38,7 +46,8 @@
 
 .MainArea {
   flex: 5;
-  
+
+
 }
 
 
