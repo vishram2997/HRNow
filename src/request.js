@@ -49,7 +49,7 @@ export const postToServer = ({
   xmlhttp.send(body);
 };
 
-export const fetchWrapper = (url, authorizationHeaderValue = '', method = 'GET') => {
+export const fetchWrapper = (url, authorizationHeaderValue = '', method = 'OPTIONS') => {
   let headers = {
     Accept: 'application/json',
     'Content-Type': 'application/json',
