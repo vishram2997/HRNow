@@ -41,12 +41,28 @@
 }
 
 .NavMenu {
-  flex: 1;
+  
+  display: flex;
+ 
+  width: 200px;
+  display: flex;
+  box-sizing: border-box;
+  align-items: stretch;
+  align-self: stretch;
+  justify-content: stretch;
+  font-size: 13px;
+  font-family: "Segoe UI Symbol";
+}
+.menuItem {
+  display: flex;
+  flex: 2;
+  width: 150px;
+ 
 }
 
 .MainArea {
   flex: 5;
-
+ 
 
 }
 

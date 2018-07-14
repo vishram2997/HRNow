@@ -7,75 +7,54 @@ import { Nav } from 'office-ui-fabric-react/lib/Nav';
 import {Link } from 'react-router-dom';
 import Task from './Task'
 import { BrowserRouter } from 'react-router-dom';
-class SideNav extends Component {
-    _onClickHandler(e: React.MouseEvent<HTMLElement>): false {
-        return false;
-      }
+import { NavLink, Switch, Route } from 'react-router-dom';
+import { FocusZone, FocusZoneDirection } from 'office-ui-fabric-react/lib/FocusZone';
+import { DefaultButton, IButtonProps } from 'office-ui-fabric-react/lib/Button';
+import Drawer from '@material-ui/core/Drawer';
+import Divider from '@material-ui/core/Divider';
+import List from '@material-ui/core/List';
+import ListItem from '@material-ui/core/ListItem';
+import ListItemIcon from '@material-ui/core/ListItemIcon';
+import ListItemText from '@material-ui/core/ListItemText';
+import InboxIcon from '@material-ui/icons/Inbox';
+import DraftsIcon from '@material-ui/icons/Drafts';
 
-       _onClickHandler2(e: React.MouseEvent<HTMLElement>): false {
-        return false;
-      }
-      onClick(event, element) {
-       // BrowserRouter.push(element.link);
-      }
-      //to design Drawer inside
-      _onRenderLink = (link)=> {
-        return (
-          <span>
-            <span key={1} className="Nav-linkText">
-            <Link to={link.name}>
-            {link.name}
-            </Link>
-            </span>
-          </span>
-        );
-      }
+class SideNav extends Component {
+    
     render() {
         return (
             <div>
             <div className="NavMenu">
-            <Nav
-              onRenderLink={this._onRenderLink}
-              onLinkClick={this.onClick.bind(this)}
-                groups={[
-                  {
-                    links: [
-                      {
-                        name: 'Home',
-                        url: 'http://example.com',
-                        links: [
-                          {
-                            name: 'User',
-                            url: '/Page/Employee',
-                            key: 'key1',
-                            onClick: this._onClickHandler2,
-                          },
-                          {
-                            name: 'Task',
-                            url: '/Page/Task',
-                            key: 'key2'
-                          },
-                          {
-                            name: 'Reports',
-                            url: 'http://msn.com',
-                            key: 'key2'
-                          },
-                          {
-                            name: 'Setup',
-                            url: 'http://msn.com',
-                            key: 'key2'
-                          }
-                        ],
-                        isExpanded: true
-                      },
-
-                    ]
-                  }
-                ]}
-                expandedStateText={'expanded'}
-                collapsedStateText={'collapsed'}
-                selectedKey={'key3'}
-              />
+            <Drawer
+              variant="permanent"
+              anchor={'left'}
+            >
+              <div className="menuItem" />
+              <List component="nav" >
+              <ListItem button>
+                <ListItemIcon>
+                  <InboxIcon />
+                </ListItemIcon>
+                <ListItemText primary="Home" />
+              </ListItem>
+              <ListItem button>
+                <ListItemIcon>
+                  <DraftsIcon />
+                </ListItemIcon>
+                <ListItemText primary="User" />
+              </ListItem>
+            </List>
+            <Divider />
+            <List component="nav">
+              <ListItem button>
+                <ListItemText primary="Setup" />
+              </ListItem>
+              <ListItem button component="a" href="#simple-list">
+                <ListItemText primary="Report" />
+              </ListItem>
+            </List>
+              
+          </Drawer>
 
           </div>
           </div>

@@ -25,7 +25,7 @@ class User extends Component {
     syncData(){
     var col = [];
 
-     fetch('http://10.0.0.52:9000/States')
+     fetch('http://localhost:9000/Timezones')
         .then(response => {
             return response.json()
         })
